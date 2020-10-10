@@ -22,11 +22,18 @@ const Drawertab = () => {
          //  screenOptions={{ gestureEnabled: false }}
       >
          <Drawer.Screen
-            name="Home"
+            name="home"
             component={HomeScreen}
             options={{ drawerLabel: 'Home', drawerIcon: getTabBarIcon('home') }}
          />
-         <Drawer.Screen name="Notifications" component={SearchScreen} />
+         <Drawer.Screen
+            name="search"
+            component={SearchScreen}
+            options={{
+               drawerLabel: 'Search',
+               drawerIcon: getTabBarIcon('search1'),
+            }}
+         />
       </Drawer.Navigator>
    );
 };

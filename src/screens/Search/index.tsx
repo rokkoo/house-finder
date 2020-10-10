@@ -1,7 +1,9 @@
 import React from 'react';
-import { Button, Text, View } from 'react-native';
-import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
+import { Button, Text } from 'react-native';
 import { DrawerScreenProps } from '@react-navigation/drawer';
+
+import Header from '../../components/Header';
+import ViewLayout from '../../shared/ViewLayout';
 
 const SearchScreen = ({ navigation }: DrawerScreenProps<any>) => {
    const onPress = (show: boolean) => {
@@ -17,11 +19,12 @@ const SearchScreen = ({ navigation }: DrawerScreenProps<any>) => {
    };
 
    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <ViewLayout>
+         <Header />
          <Text>SearchScreen!</Text>
          <Button title="hide nav" onPress={() => onPress(false)} />
          <Button title="show nav" onPress={() => onPress(true)} />
-      </View>
+      </ViewLayout>
    );
 };
 

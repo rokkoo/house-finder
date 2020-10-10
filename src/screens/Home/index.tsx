@@ -1,7 +1,9 @@
 import React from 'react';
-import { Button, Text, View } from 'react-native';
-import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
+import { Button, Text } from 'react-native';
 import { DrawerScreenProps } from '@react-navigation/drawer';
+
+import ViewLayout from '../../shared/ViewLayout';
+import Header from '../../components/Header';
 
 const HomeScreen = ({ navigation }: DrawerScreenProps<any>) => {
    const onPress = (show: boolean) => {
@@ -12,16 +14,15 @@ const HomeScreen = ({ navigation }: DrawerScreenProps<any>) => {
       }
 
       navigation.closeDrawer();
-
-      // navigation.setOptions({ tabBarVisible: show });
    };
 
    return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <ViewLayout>
+         <Header />
          <Text>Home!</Text>
          <Button title="hide nav" onPress={() => onPress(false)} />
          <Button title="show nav" onPress={() => onPress(true)} />
-      </View>
+      </ViewLayout>
    );
 };
 

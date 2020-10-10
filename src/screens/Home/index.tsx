@@ -1,12 +1,19 @@
 import React from 'react';
 import { Button, Text, View } from 'react-native';
 import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
+import { DrawerScreenProps } from '@react-navigation/drawer';
 
-const HomeScreen = ({ navigation }: BottomTabScreenProps<any>) => {
+const HomeScreen = ({ navigation }: DrawerScreenProps<any>) => {
    const onPress = (show: boolean) => {
       console.log('press');
 
-      navigation.setOptions({ tabBarVisible: show });
+      if (show) {
+         return navigation.openDrawer();
+      }
+
+      navigation.closeDrawer();
+
+      // navigation.setOptions({ tabBarVisible: show });
    };
 
    return (
